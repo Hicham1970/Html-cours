@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Forms Attributes</title>
+  </head>
+  <body>
+    <h2>HTML Forms</h2>
+
+    <form action="/action_page.php">
+      <label for="fname">First name:</label><br />
+      <input type="text" id="fname" name="fname" value="John" /><br />
+      <label for="lname">Last name:</label><br />
+      <input type="text" id="lname" name="lname" value="Doe" /><br /><br />
+      <input type="submit" value="Submit" />
+    </form>
+    <h2>The form target attribute</h2>
+
+    <p>
+      When submitting this form, the result will be opened in a new browser tab:
+    </p>
+
+    <form action="/action_page.php" target="_blank">
+      <label for="fname">First name:</label><br />
+      <input type="text" id="fname" name="fname" value="John" /><br />
+      <label for="lname">Last name:</label><br />
+      <input type="text" id="lname" name="lname" value="Doe" /><br /><br />
+      <input type="submit" value="Submit" />
+    </form>
+    <h2>The method Attribute</h2>
+
+    <p>This form will be submitted using the GET method:</p>
+    
+    <h3>Method get</h3>
+    <form action="/action_page.php" target="_blank" method="get">
+      <label for="fname">First name:</label><br />
+      <input type="text" id="fname" name="fname" value="John" /><br />
+      <label for="lname">Last name:</label><br />
+      <input type="text" id="lname" name="lname" value="Doe" /><br /><br />
+      <input type="submit" value="Submit" />
+    </form>
+
+    <p>
+      After you submit, notice that the form values is visible in the address
+      bar of the new browser tab.
+    </p>
+
+    <p>
+      If you click the "Submit" button, the form-data will be sent to a page
+      called "/action_page.php".
+    </p>
+    <p>This form will be submitted using the POST method:</p>
+    <h3>Method Post</h3>
+
+    <form action="/action_page.php" target="_blank" method="post">
+      <label for="fname">First name:</label><br />
+      <input type="text" id="fname" name="fname" value="John" /><br />
+      <label for="lname">Last name:</label><br />
+      <input type="text" id="lname" name="lname" value="Doe" /><br /><br />
+      <input type="submit" value="Submit" />
+    </form>
+
+    <p>
+      After you submit, notice that, unlike the GET method, the form values is
+      NOT visible in the address bar of the new browser tab.
+    </p>
+  </body>
+</html>

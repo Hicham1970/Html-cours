@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Html Form Elements</title>
+    <style>
+      textarea {
+        width: 200px;
+        height: 160px;
+      }
+      button {
+        background-color: red;
+        width: 90px;
+        height: 35px;
+        color:white; 
+        font-weight: 200;
+        font-size: 1.1em;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>The input Element</h2>
+
+    <form action="/action_page.php">
+      <label for="fname">First name:</label><br />
+      <input type="text" id="fname" name="fname" /><br /><br />
+      <input type="submit" value="Submit" />
+    </form>
+    <h2>The select Element</h2>
+
+    <p>The select element defines a drop-down list:</p>
+
+    <form action="/action_page.php">
+      <label for="cars">Choose a car:</label><br />
+      <select id="cars" name="cars" title="Cars">
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="fiat">Fiat</option>
+        <option value="audi">Audi</option>
+      </select>
+      <input type="submit" />
+    </form>
+    <p>A select element of the Moroccan cities</p>
+    <label for="ciries">Choose your native city:</label>
+    <select name="cities" id="ville" title="choose city" size="2" multiple>
+      <option value="agadir">Agadir</option>
+      <option value="marrakech">Marrakech</option>
+      <option value="berrachide">Berrachide</option>
+      <option value="casablanca">Casablanca</option>
+      <option value="fes">Fes</option>
+      <option value="meknes">Meknes</option>
+      <option value="ouazzane">Ouazzane</option>
+      <option value="safi" selected>Safi</option>
+    </select>
+    <input type="submit" name="cities" value="Submit" />
+    <label for="message">This is a textarea</label>
+    <textarea
+      name="message"
+      rows="6"
+      cols="150"
+      placeholder="this is a textarea"
+    >
+The `rows` attribute specifies the visible number of lines in a text area.
+
+The `cols` attribute specifies the visible width of a text area..
+</textarea
+    ><br /><br />
+    <button type="button" onclick="alert('Hello World!')">Click Me!</button>
+  </body>
+</html>

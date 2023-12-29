@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Forms</title>
+  </head>
+  <body>
+    <h2>HTML Forms</h2>
+    <form action="/action_page.php">
+      <label for="fname">First name:</label><br />
+      <input type="text" id="fname" name="fname" value="John" /><br />
+      <label for="lname">Last name:</label><br />
+      <input type="text" id="lname" name="lname" value="Doe" /><br /><br />
+      <input type="submit" value="Submit" />
+    </form>
+
+    <p>
+      If you click the "Submit" button, the form-data will be sent to a page
+      called "/action_page.php".
+    </p>
+    <form>
+      <label for="vname">Vessel:</label><br />
+      <input type="text" id="vname" name="vessel" /><br />
+      <label for="nation">Nationality:</label><br />
+      <input type="text" id="nation" name="vessel" />
+    </form>
+
+    <p>Choose your favorite Web language:</p>
+    <form>
+      <input type="radio" id="html" name="fav_language" value="HTML" />
+      <label for="html">HTML</label><br />
+      <input type="radio" id="css" name="fav_language" value="CSS" />
+      <label for="css">CSS</label><br />
+      <input
+        type="radio"
+        id="javascript"
+        name="fav_language"
+        value="JavaScript"
+      />
+      <label for="javascript">JavaScript</label>
+    </form>
+    <!-- Notice that each input field must have a `name` attribute to be submitted.
+    If the `name` attribute is omitted, the value of the input field will not be sent at all.-->
+    <p>
+      This example will not submit the value of the "First name" input field:
+    </p>
+    <form action="/action_page.php">
+      <label for="fname">First name:</label><br />
+      <input type="text" id="fname" value="John" /><br /><br />
+      <input type="submit" value="Submit" />
+    </form>
+    <p>
+      Notice that the value of the "First name" field will not be submitted,
+      because the input element does not have a name attribute.
+    </p>
+  </body>
+</html>
