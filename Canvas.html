@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html Canvas Graphics</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Canvas</h1>
+    <p>The HTML canvas element is used to draw graphics, on the fly, via JavaScript.<br /><br />
+        The canvas element is only a container for graphics. You must use JavaScript to actually draw the graphics.
+        Canvas has several methods for drawing paths, boxes, circles, text, and adding images.</p><br /><br />
+    <canvas id="myCanvas" width="200" height="100"> </canvas>
+    <script>
+        <!--Draw a Line-->
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        ctx.moveTo(0, 0);
+        ctx.lineTo(200, 90);
+        ctx.stroke();
+
+        
+    </script>
+
+</body>
+
+</html>

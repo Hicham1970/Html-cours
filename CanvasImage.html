@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Image</title>
+    <style>
+        canvas{border:1px solid #d3d3d3;}
+    </style>
+</head>
+
+<body>
+    <p>Image to use:</p>
+    <img id="activity" src="activity-red.png" alt="The activity" width="25" height="25">
+
+    <p>Canvas to fill:</p>
+    <canvas id="myCanvas" width="50" height="50">
+        Your browser does not support the HTML canvas tag.</canvas>
+
+    <p><button onclick="myCanvas()">Try it</button></p>
+
+    <script>
+        function myCanvas() {
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+            var img = document.getElementById("activity");
+            ctx.drawImage(img, 10, 20);
+        }
+    </script>
+
+
+</body>
+
+</html>
