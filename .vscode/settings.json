@@ -4,5 +4,12 @@
         "ouazzane",
         "safi"
     ],
-    "livePreview.defaultPreviewPath": "/HtmlButtonInput.html"
+    "livePreview.defaultPreviewPath": "/HtmlButtonInput.html",
+    "cSpell.enableFiletypes": [
+        "csv",
+        "drawio",
+        "excel",
+        "html"
+    ],
+    "cSpell.language": "en,fr,lorem,en-US"
 }
