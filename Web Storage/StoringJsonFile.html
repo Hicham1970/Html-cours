@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Storing Json files et Savoir si notre local storage est disponible ou non
+    </title>
+  </head>
+  <body>
+    <h1>Json Files</h1>
+    <!--JSON FILES fonctions :
+    * .Stringify() & .Parse()
+    * Comment savoir si le LS est plein-->
+    <script>
+      const humain = { nom: "Samir", age: 30 };
+      // Convertir un objet JSON en chaîne
+      //   const humainJson = JSON.stringify(humain);
+      // Convertir une chaîne JSON en objet
+      //   const humainObject = JSON.parse(humainJson);
+      let user = localStorage.setItem("user", JSON.stringify(humain));
+      console.log(user); // undefined
+      const storedUser = localStorage.getItem("user"); // stored in string  format
+      console.log(storedUser);
+      const userObject = JSON.parse(storedUser); // object  format
+      console.log(userObject);
+      console.log(JSON.parse(localStorage.getItem("user")));
+      localStorage.clear(); 
+        
+      // Savoir si notre local Storage est vide:
+      if (localStorage.length > 0) {
+        console.log("Local storage is not empty");
+      } else {
+        console.log("Local storage is empty");
+      }
+    </script>
+  </body>
+</html>

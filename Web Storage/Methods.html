@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Local Storage - Web Dev Basics</title>
+  </head>
+  <body>
+    <h2>Local storage and App</h2>
+    <!---
+        Local storage and sessionStorage , part of the web storage Api, are two great tools to  save key/value pairs locally.
+    setItem() : add key and value to localStorage [Create] [Update] 
+    getItem() : retrieve a value by the key from localStorage  [Read]
+    RemoveItem(): remove an item by the key from localStorage [Delete]
+    Clear(): Clear all items from localStorage [Clear All]
+    key(): Passed a number to retrieve nth key of a localStorage
+    -->
+
+    <script>
+      localStorage.setItem("language", "html");
+      localStorage.setItem("language1", "css");
+      localStorage.setItem("language2", "php");
+
+      //   console.log(localStorage.getItem('language2'))
+      localStorage.removeItem("language2"); // to remove the item language2 and hiv value php
+      localStorage.removeItem("firstName"); // to remove the item firstName and hiv value Hicham
+      localStorage.clear();
+
+      localStorage.setItem("language", "javascript");
+      localStorage.setItem("language", "python"); // update the key language
+      localStorage.setItem("language1", "php");
+      // Display items stored in localStorage
+      localStorage.getItem("language");
+      localStorage.getItem("language1");
+
+      // display the nth key of a localStorage
+      let myKey = localStorage.key(0);
+      console.log(myKey);
+      myValue = localStorage.getItem(myKey);
+      console.log(myValue);
+    </script>
+  </body>
+</html>

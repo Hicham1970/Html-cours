@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Items Iteration & Checking Browser Support LS</title>
+  </head>
+  <body>
+    <h2>Iteration Over Items</h2>
+    <script>
+      // TODO: Iteration
+      localStorage.setItem("first", "1");
+      localStorage.setItem("second", "2");
+      localStorage.setItem("third", "3");
+      localStorage.setItem("forth", "4");
+
+      for (let i = 0; i < localStorage.length; i++) {
+        let key = localStorage.key(i);
+        let value = localStorage.getItem(key);
+
+        console.log(key + " = " + value);
+      }
+
+    //   FIXME: Check browser support
+      //  * You can use the site web : caniuse.com to check * Or by one of this 2 codes :
+
+      if (window.localStorage) {
+        console.log("yes");
+      } else {
+        console.log("no");
+      }
+
+      if(typeof(Storage !== undefined)){
+        console.log("Browser supports local storage");
+      } else {
+        console.log("Browser doesn't support local storage");
+      }
+      
+
+    </script>
+  </body>
+</html>
