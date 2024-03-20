@@ -49,7 +49,12 @@ body {
   text-align: center;
 }
 .parent .résultat span span {
-    font-weight: bold;
-    color:#009688;
-    font-size: 1.5em;
+  font-weight: bold;
+  color: #009688;
+  font-size: 1.5em;
+}
+
+.keys {
+  display: block;
+  margin: 5px 0;
 }

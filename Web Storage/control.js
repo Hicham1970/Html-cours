@@ -29,7 +29,7 @@ allSpan.forEach((span) => {
   });
 });
 
-function checkInput() {
+function showMessage() {
   résultat.innerHTML = "Aucune donnée à vérifier";
 }
 
@@ -41,18 +41,46 @@ function checkItem() {
       résultat.innerHTML = `Aucune donnée trouvée  associée à <span>${theInput.value}</span>`;
     }
   } else {
-      checkInput();
+    showMessage();
   }
 }
 
 function addItem() {
-  console.log("Add item clicked!");
+  if (theInput.value !== "") {
+    localStorage.setItem(theInput.value, "test");
+    résultat.innerHTML = `Le localStorage Element<span>${theInput.value}</span> a été ajouté avec succès`;
+    theInput.value = "";
+  } else {
+    showMessage();
+  }
 }
 
 function deleteItem() {
-  console.log("Delete item clicked!");
+  if (theInput.value !== "") {
+    if (localStorage.getItem(theInput.value)) {
+      localStorage.removeItem(theInput.value);
+      résultat.innerHTML = `Une donnée du LocalStorage associée à :<span>${theInput.value}</span> a ete supprimée avec succès`;
+      theInput.value = "";
+    } else {
+      résultat.innerHTML = `Aucune donnée trouvée  associée à <span>${theInput.value}</span>`;
+    }
+  } else {
+    showMessage();
+  }
 }
 
 function showItem() {
-  console.log("Show item clicked!");
+  if (localStorage.length) {
+    résultat.innerHTML = "";
+    for (let [key, value] of Object.entries(localStorage)) {
+      résultat.innerHTML += `<span class="keys">${key} : ${value}</span><br />`;
+    }
+
+    // console.log(
+    //   `elements trouvés dans le localStorage: ${Object.keys(localStorage)}`
+    // );
+    // console.log(`éléments trouvés : ${localStorage.length}`);
+  } else {
+    résultat.innerHTML = "LocalStorage est vide !";
+  }
 }

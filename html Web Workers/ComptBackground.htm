@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create a Web Worker</title>
+  </head>
+  <body>
+    <h1>What is a Web Worker?</h1>
+    <p>
+      When executing scripts in an HTML page, the page becomes unresponsive
+      until the script is finished.
+    </p>
+    <p>
+      A web worker is a JavaScript that runs in the background, independently of
+      other scripts, without affecting the performance of the page. You can
+      continue to do whatever you want: clicking, selecting things, etc., while
+      the web worker runs in the background.
+    </p>
+    <h2>
+      The example below creates a simple web worker that count numbers in the
+      background:
+    </h2>
+    <p>Count numbers: <output id="result"></output></p>
+    <button type="button" onclick="startWorker()">Start Worker</button>
+    <button type="button" onclick="stopWorker()">Stop Worker</button>
+
+    <p>
+      <strong>Note:</strong> Internet Explorer 9 and earlier versions do not
+      support Web Workers.
+    </p>
+
+    <script>
+      let w;
+
+      function startWorker() {
+        //  Etape 1:/ Before creating a web worker, check whether the user's browser supports it:
+        if (typeof Worker !== "undefined") {
+          /**
+             *  Etape 3:Now that we have the web worker file (etape 2), we need to call it from an HTML page.
+            The following lines checks if the worker already exists, if not - it creates a new web worker object and runs the code in "workers.js":
+            */
+          if (typeof w == "undefined") {
+            w = new Worker("workers.js");
+          }
+          /*Etape 4:
+          *Then we can send and receive messages from the web worker.
+            Add an "onmessage" event listener to the web worker.
+            When the web worker posts a message, the code within the event listener is executed. The data from the web worker is stored in event.data (which is a string).
+          */
+          w.onmessage = function (event) {
+            document.getElementById("result").innerHTML = event.data;
+          };
+        } else {
+          document.getElementById("result").innerHTML =
+            "Sorry, your browser does not support Web Workers...";
+        }
+      }
+
+      function stopWorker() {
+        /*
+        *Etape 5:
+        When a web worker object is created, it will continue to listen for messages (even after the external script is finished) until it is terminated.
+        To terminate a web worker, and free browser/computer resources, use the terminate() method:
+        */
+        w.terminate();
+        //  Etape 6:If you set the worker variable to undefined, after it has been terminated, you can reuse the code:
+        w = undefined;
+      }
+    </script>
+  </body>
+</html>
